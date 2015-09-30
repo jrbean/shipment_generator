@@ -17,7 +17,7 @@ CSV.foreach("shipments.csv", headers: true) do |row|
   crates.push row['Number of crates'].to_i
   profit.push row['Profit per crate'].to_i
   if row['Destination'] == 'Earth'
-    earth_money += row['Number of crates'].to_i*row['Profit per crate'].to_i
+    earth_money += row['Number of crates'].to_i * row['Profit per crate'].to_i
     end
   if row['Destination'] == 'Mars'
     mars_money += row['Number of crates'].to_i * row['Profit per crate'].to_i
@@ -28,7 +28,6 @@ CSV.foreach("shipments.csv", headers: true) do |row|
   end
 
 trips = destinations.zip(shipped,crates,profit)
-
 
 money_per_ship = profit.zip(crates).map do |x, y| x*y end
   money_per_ship.each do |i|
@@ -54,7 +53,7 @@ puts "Total weekly profits were #{money}. There were #{total_trips} total trips.
 # class Shipments
 #   attr_reader :destination :shipped :crates :profit
 #
-#   def initialize(d, s, c, p)
+#   def initialize
 #   end
 #
 # end
@@ -62,3 +61,5 @@ puts "Total weekly profits were #{money}. There were #{total_trips} total trips.
 #
 # earth = Shipments.new
 # fry_total =
+
+class Pilot
